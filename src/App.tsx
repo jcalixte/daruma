@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { supabase } from "./lib/supabase"
 import { Auth } from "./components/Auth"
 import { DarumaList } from "./components/DarumaList"
@@ -26,9 +26,7 @@ function App() {
     return <Auth />
   }
 
-  const handleSignOut = async () => {
-    await supabase.auth.signOut()
-  }
+  const handleSignOut = async () => supabase.auth.signOut()
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -36,7 +34,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <h1 className="text-2xl font-bold text-indigo-600">
-              Daruma Tracker
+              Theodo Apps' Daruma Tracker
             </h1>
             {session.user ? (
               <p className="text-gray-500">{session.user.email}</p>
