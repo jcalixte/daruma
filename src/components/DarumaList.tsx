@@ -10,7 +10,7 @@ export function DarumaList() {
   const [newWish, setNewWish] = useState("")
   const [selectedColor, setSelectedColor] = useState("red")
 
-  const colors = ["blue", "green", "red", "gold", "purple"]
+  const colors = ["red", "blue", "green", "gold", "purple"]
 
   useEffect(() => {
     fetchDarumas()
